@@ -23,7 +23,6 @@
             const workbook = new ExcelJS.Workbook();
             await workbook.xlsx.load(excell1);
             let ws = workbook.getWorksheet(1);
-            console.log(ws.getCell('A8').value)
             return ws;
         }
         function handler1() {
@@ -31,7 +30,6 @@
             generate(a);
         };
         async function generate(a){
-           console.log('c'+a);
            let eng =  await  ex.getCell('C'+a).value;
            let rus =  await  ex.getCell('D'+a).value;
            res.innerHTML = eng + "    ---------------------------------       " + rus;
@@ -40,19 +38,8 @@
         async function start(){
             ex = await get_excel();
         }
-        start();
-
-
-        
+        start();      
         btn_start.addEventListener("click", handler1); 
-
-        
-
-
-
-
-
-        
     </script>
 </body>
 
