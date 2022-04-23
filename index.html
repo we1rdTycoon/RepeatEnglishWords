@@ -15,12 +15,7 @@
 
     <script>
         async function get_excel() {
-            let response = await fetch('/words.xlsx', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json;charset=utf-8'
-                },
-            });
+            let response = await fetch("/words.xlsx");
 
             let result = await response.json();
             
