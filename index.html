@@ -36,8 +36,10 @@
            res.innerHTML = end + "    ---------------------------------       " + rus;
         }
 
-        ex = get_excel();
-
+        async function start(){
+            ex = await get_excel();
+        }
+        start();
 
 
         
