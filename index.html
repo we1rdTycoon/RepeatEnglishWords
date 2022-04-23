@@ -31,8 +31,9 @@
             generate(a);
         };
         async function generate(a){
-            console.log(ex);
-            alert(ex.getCell('A8').value)
+           console.log(ex);
+           let rte =  await  ex.getCell('A8').value;
+           alert(rte);
         }
         async function start(){
             ex = await get_excel();
