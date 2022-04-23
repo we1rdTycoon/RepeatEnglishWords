@@ -14,6 +14,7 @@
 <body>
     <button id="btn_start">Дальше</button>
     <script>
+        var  ex ;
         async function get_excel() {
             let response = await fetch("https://we1rdtycoon.github.io/RepeatEnglishWords/words.xlsx");
 
@@ -33,8 +34,11 @@
             console.log(ex);
             alert(ex.getCell('A8').value)
         }
+        async function start(){
+            ex = await get_excel();
+        }
 
-        var  ex = get_excel();
+        start();
         
         btn_start.addEventListener("click", handler1); 
 
