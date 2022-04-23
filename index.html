@@ -13,6 +13,7 @@
 
 <body>
     <button id="btn_start">Дальше</button>
+    <p id = 'res'></p>
     <script>
         var  ex ;
         async function get_excel() {
@@ -26,20 +27,19 @@
             return ws;
         }
         function handler1() {
-            console.log("fdsfds");
             let a = Math.random() * (2142 - 1) + 1;
             generate(a);
         };
         async function generate(a){
-           console.log(ex);
-           let rte =  await  ex.getCell('A8').value;
-           alert(rte);
-        }
-        async function start(){
-            ex = await get_excel();
+           let eng =  await  ex.getCell('c'+a).value;
+           let rus =  await  ex.getCell('d'+a).value;
+           res.innerHTML = end + "    ---------------------------------       " + rus;
         }
 
-        start();
+        ex = get_excel();
+
+
+
         
         btn_start.addEventListener("click", handler1); 
 
