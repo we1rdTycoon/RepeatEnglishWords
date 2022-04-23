@@ -27,11 +27,11 @@
             return ws;
         }
         function handler1() {
-            let a = Math.random() * (2142 - 1) + 1;
+            let a = Math.floor(Math.random() * (2142 - 1)) + 1;
             generate(a);
         };
         async function generate(a){
-           console('c'+a);
+           console.log('c'+a);
            let eng =  await  ex.getCell('c'+a).value;
            let rus =  await  ex.getCell('d'+a).value;
            res.innerHTML = end + "    ---------------------------------       " + rus;
