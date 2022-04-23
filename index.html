@@ -21,6 +21,7 @@
             const workbook = new ExcelJS.Workbook();
             await workbook.xlsx.load(excell1);
             let ws = workbook.getWorksheet(1);
+            console.log(ws.getCell('A8').value)
             return ws;
         }
         function handler1() {
