@@ -12,15 +12,33 @@
 </head>
 
 <body>
-
+    <button id="btn_start">Дальше</button>
     <script>
         async function get_excel() {
             let response = await fetch("https://we1rdtycoon.github.io/RepeatEnglishWords/words.xlsx");
 
-            let result = await response.json();
-            
+            let excell1 = await response.arrayBuffer();
+            const workbook = new ExcelJS.Workbook();
+            await workbook.xlsx.load(excell1);
+            let ws = workbook.getWorksheet(1);
+            return ws;
         }
-        get_excel();
+        function handler1() {
+            console.log("fdsfds");
+            let a = Math.random() * (2142 - 1) + 1;
+            generate(a);
+        };
+        async function generate(a){
+            alert(ex.getCell('A8').value)
+        }
+
+        var  ex = get_excel();
+        
+        btn_start.addEventListener("click", handler1); 
+
+        
+
+
 
 
 
