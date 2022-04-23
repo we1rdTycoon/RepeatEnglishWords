@@ -31,6 +31,7 @@
             generate(a);
         };
         async function generate(a){
+           console('c'+a);
            let eng =  await  ex.getCell('c'+a).value;
            let rus =  await  ex.getCell('d'+a).value;
            res.innerHTML = end + "    ---------------------------------       " + rus;
