@@ -13,6 +13,7 @@
 
 <body>
     <button id="btn_start">Дальше</button>
+    <p id = 'start'></p>
     <p id = 'res'></p>
     <script>
         var ex;
@@ -29,6 +30,7 @@
                i++;
             }while(ws.getCell('A'+i).value)
             max = i-1;
+            start.innerHTML = "Excel загрузилась!!!";
             return ws;
         }
         function handler1() {
