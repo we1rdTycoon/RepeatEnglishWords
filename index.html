@@ -15,7 +15,8 @@
     <button id="btn_start">Дальше</button>
     <p id = 'res'></p>
     <script>
-        var  ex ;
+        var ex;
+        var max;
         async function get_excel() {
             let response = await fetch("https://we1rdtycoon.github.io/RepeatEnglishWords/words.xlsx");
 
@@ -23,10 +24,15 @@
             const workbook = new ExcelJS.Workbook();
             await workbook.xlsx.load(excell1);
             let ws = workbook.getWorksheet(1);
+            let i=0;
+            do{
+               i++;
+            }while(!ws.getCell('A'+i).value)
+            console.log(i);
             return ws;
         }
         function handler1() {
-            let a = Math.floor(Math.random() * (2142 - 1)) + 1;
+            let a = Math.floor(Math.random() * (max - 1)) + 1;
             generate(a);
         };
         async function generate(a){
